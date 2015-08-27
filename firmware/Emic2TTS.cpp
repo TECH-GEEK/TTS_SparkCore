@@ -29,14 +29,14 @@
   Code taken from the Emic2 Demo sketch written by Joe Grand [www.grandideastudio.com]
  */
 void Emic2TtsModule::init() {
-  Serial1.begin(9600);
+  Serial2.begin(9600);
   
-  Serial1.print('\n');
-  while (Serial1.read() != ':');
+  Serial2.print('\n');
+  while (Serial2.read() != ':');
 
   delay(10);
 
-  Serial1.flush();
+  Serial2.flush();
 }
 
 //! Play English language speaking demo.
@@ -86,90 +86,90 @@ void Emic2TtsModule::restoreDefaults() {
 
 //! Speak the passed in value, essentially a wrapper function for the function in Print.
 void Emic2TtsModule::say(const String &string) {
-  Serial1.print('S');
-  Serial1.print(string);
+  Serial2.print('S');
+  Serial2.print(string);
   sendTerminatorAndWait();
 }
 
 //! Speak the passed in value, essentially a wrapper function for the function in Print.
 void Emic2TtsModule::say(const char s[]) {
-  Serial1.print('S');
-  Serial1.print(s);
+  Serial2.print('S');
+  Serial2.print(s);
   sendTerminatorAndWait();
 }
 
 //! Speak the passed in value, essentially a wrapper function for the function in Print.
 void Emic2TtsModule::say(char c) {
-  Serial1.print('S');
-  Serial1.print(c);
+  Serial2.print('S');
+  Serial2.print(c);
   sendTerminatorAndWait();
 }
 
 //! Speak the passed in value, essentially a wrapper function for the function in Print.
 void Emic2TtsModule::say(unsigned char c, int base) {
-  Serial1.print('S');
-  Serial1.print(c, base);
+  Serial2.print('S');
+  Serial2.print(c, base);
   sendTerminatorAndWait();
 }
 
 //! Speak the passed in value, essentially a wrapper function for the function in Print.
 void Emic2TtsModule::say(int i, int base) {
-  Serial1.print('S');
-  Serial1.print(i, base);
+  Serial2.print('S');
+  Serial2.print(i, base);
   sendTerminatorAndWait();
 }
 
 //! Speak the passed in value, essentially a wrapper function for the function in Print.
 void Emic2TtsModule::say(unsigned int i, int base) {
-  Serial1.print('S');
-  Serial1.print(i, base);
+  Serial2.print('S');
+  Serial2.print(i, base);
   sendTerminatorAndWait();
 }
 
 //! Speak the passed in value, essentially a wrapper function for the function in Print.
 void Emic2TtsModule::say(long i, int base) {
-  Serial1.print('S');
-  Serial1.print(i, base);
+  Serial2.print('S');
+  Serial2.print(i, base);
   sendTerminatorAndWait();
 }
 
 //! Speak the passed in value, essentially a wrapper function for the function in Print.
 void Emic2TtsModule::say(unsigned long i, int base) {
-  Serial1.print('S');
-  Serial1.print(i, base);
+  Serial2.print('S');
+  Serial2.print(i, base);
   sendTerminatorAndWait();
 }
 
 //! Speak the passed in value, essentially a wrapper function for the function in Print.
 void Emic2TtsModule::say(double i, int digits) {
-  Serial1.print('S');
-  Serial1.print(i, digits);
+  Serial2.print('S');
+  Serial2.print(i, digits);
   sendTerminatorAndWait();
 }
 
 //! Speak the passed in value, essentially a wrapper function for the function in Print.
 void Emic2TtsModule::say(const Printable& printable) {
-  Serial1.print('S');
-  Serial1.print(printable);
+  Serial2.print('S');
+  Serial2.print(printable);
   sendTerminatorAndWait();
 }
 
 //! Send a command to the Emic 2 and wait for it to respond.
 void Emic2TtsModule::sendCommand(char command) {
-  Serial1.print(command);
+  Serial2.print(command);
   sendTerminatorAndWait();
 }
 
 //! Send a command and parameter to the Emic 2 and wait for it to respond.
 void Emic2TtsModule::sendCommand(char command, int param) {
-  Serial1.print(command);
-  Serial1.print(param);
+  Serial2.print(command);
+  Serial2.print(param);
   sendTerminatorAndWait();
 }
 
 //! Terminate a command and wait for the Emic 2 to respond.
 void Emic2TtsModule::sendTerminatorAndWait() {
-  Serial1.print('\n');
+  Serial2.print('\n');
   
-  while (Serial1.read() != ':');
+  while (Serial2.read() != ':');
 }
