@@ -1,7 +1,7 @@
 {
-	"name": "Emic2TTS",
-	"author": "Krishnaraj Varma",
+	"name": "Emic2TTS v2",
+	"author": "Krishnaraj Varma. Edited by Stephen G.",
 	"version": "1.0.0",
 	"license": "MIT license",
-	"description": "Emic2 Text-to-Speech module library"
+	"description": "Emic2 Text-to-Speech module library that uses 5v tolerant pins, D0(Rx/SOUT) and D1(Tx/SIN)"
 } 
