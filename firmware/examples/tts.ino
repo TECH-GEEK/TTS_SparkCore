@@ -1,4 +1,4 @@
-#include "Emic2TTS\Emic2TTS.h"
+#include "Emic2TTS_v2\Emic2TTS_v2.h"
 
 // Property tags
 #define VOLUME "Volume"
